@@ -8,19 +8,16 @@
   },
   "homepage": "http://www.github.com/derryl",
   "engines": {
-    "node": ">= 0.8.0"
+    "node": ">= 0.10.0"
   },
   "dependencies": {
     "grunt": "~0.4.0",
     "express": "~3.1.0",
     "socket.io": "~0.9.13",
-    "grunt-contrib-livereload": "~0.1.2",
     "consolidate": "~0.8.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-express": "~0.2.0",
-    "grunt-regarde": "~0.1.1",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-clean": "~0.4.1",
@@ -28,12 +25,14 @@
     "grunt-contrib-uglify": "*",
     "grunt-htmlcompressor": "*",
     "grunt-text-replace": "*",
-    "grunt-contrib-livereload": "*",
     "grunt-contrib-less": "~0.5.1",
     "less": "*",
     "jade": "~0.31.1",
     "grunt-shell": "~0.2.2",
     "grunt-contrib-coffee": "~0.7.0",
-    "grunt-consolidate": "~0.1.0"
+    "grunt-consolidate": "~0.1.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-newer": "~0.5.4"
   }
 }
