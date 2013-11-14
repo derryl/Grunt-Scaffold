@@ -1,0 +1,9 @@
+{>"partials/_html"/}
+{<head}
+  <title>{projectTitle}</title>
+{/head}
+{<body}
+  <h1>{+title /}</h1>
+  <hr />
+  <p>{+content /}</p>
+{/body}

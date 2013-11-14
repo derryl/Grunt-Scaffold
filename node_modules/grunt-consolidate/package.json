@@ -1,0 +1,55 @@
+{
+  "name": "grunt-consolidate",
+  "description": "Use consolidate.js to apply templating to your Grunt projects",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mikevercoelen/grunt-consolidate",
+  "author": {
+    "name": "Mike Vercoelen",
+    "email": "mike.vercoelen@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikevercoelen/grunt-consolidate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikevercoelen/grunt-consolidate/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mikevercoelen/grunt-consolidate/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt": "~0.4.1",
+    "dustjs-linkedin": "~1.2.4"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    "consolidate",
+    "template",
+    "preprocessing",
+    "html",
+    "compile"
+  ],
+  "dependencies": {
+    "consolidate": "~0.9.1"
+  },
+  "readme": "# grunt-consolidate\n\n  Use [Consolidate.js](https://github.com/visionmedia/consolidate.js/) for templating of files in your Grunt projects.\n  Very useful for preprocessing (build specific file content, such as: LiveReload snippet, non minified assets), \n  and keeping things dry in HTML, JS etc.\n\n## Getting Started\nThis plugin requires Grunt `~0.4.1`\n\nIf you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-consolidate --save-dev\n```\n\nOne the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks('grunt-consolidate');\n```\n\n## The \"consolidate\" task\n\n### Overview\nIn your project's Gruntfile, add a section named `consolidate` to the data object passed into `grunt.initConfig()`.\n\n```js\ngrunt.initConfig({\n  consolidate: {\n    options: {\n      // Task-specific options go here.\n    },\n    your_target: {\n      // Target-specific file lists and/or options go here.\n    },\n  },\n})\n```\n\n### Options\n\n#### options.engine\nType: `String`\nDefault value: `null`\n\nThe name of the engine used to template your files, you should have the\nengine in your node_modules, so make sure it is installed before defining the engine,\nuses consolidate.js underhood.\n\nCheck [Consolidate.js](https://github.com/visionmedia/consolidate.js/) for more information.\n\n#### options.locals\nType: `Object`\nDefault value: `{}`\n\nPassed through to the actual template engine, for example, if you use Dust.js as template\nengine for Consolidate, than this is passed raw as argument to render the template.\n\n\n### Usage Examples\n\n#### Dust.js in src dir\nIn this example, we are using [Dust.js](https://github.com/linkedin/dustjs).\nAs you can see, the local option is an object that is passed in to all templates,\nyou could define your helpers, view logic here.\n\n```js\ngrunt.initConfig({\n  consolidate: {\n    options: {\n\n      // dust, handlebars, haml, swig and way more ... https://github.com/linkedin/dustjs\n      engine: 'dust'\n    },\n    dev: {\n      options: {\n\n        // Data, helpers, partials etc.\n        local: {\n          users: [{\n            name: 'tom',\n            email: 'tom@mail.com',\n            password: 'computer1'\n          }, {\n            name: 'rick',\n            email: 'rick@mail.com',\n            password: 'secret1'\n          }]\n        }\n      },\n      files: [{\n        expand: true,\n        cwd: 'src/',\n\n        // All directories & subdirectories, files that have \".dust.html\" in their\n        // file extension.\n        src: ['{,*/}*.dust.html'],\n        dest: 'dist/',\n        ext: '.html',\n\n        // Ignore files with \"_\" prefix, so \"partials/_html-doc.html.dust\"\n        // would be ignored.\n        filter: function(srcFile) {\n          return !/\\/_/.test(srcFile);\n        }\n      }]\n    }\n  }\n})\n```\n\n## Contributing\nIn lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).",
+  "readmeFilename": "README.md",
+  "_id": "grunt-consolidate@0.1.0",
+  "_from": "grunt-consolidate@~0.1.0"
+}

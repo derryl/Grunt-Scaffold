@@ -1,0 +1,15 @@
+{>"partials/_page" /}
+{<title}Users{/title}
+{<content}
+  <ul id="users">
+  {#users}
+    <li>
+      <ul class="user">
+        <li class="user-name">{name}</li>
+        <li class="user-email">{email}</li>
+        <li class="user-password">{password}</li>
+      </ul>
+    </li>
+  {/users}
+  </ul>
+{/content}
