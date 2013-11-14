@@ -202,6 +202,7 @@ module.exports = function(grunt) {
     grunt.registerTask( 'run', ['build','shell:launchBrowser','server']);
     grunt.registerTask( 'default', [
         'build',
+        'shell:launchBrowser',
         'server'
     ]);
 
