@@ -5,12 +5,12 @@
 DEFAULT_DIR='/Users/derryl/Desktop'
 DEFAULT_NAME='scaffold'
 
-DIR=${1:-$DEFAULT_DIR}
-NAME=${2:-$DEFAULT_NAME}
+DESTINATION=${1:-$DEFAULT_DIR}
+PROJECT_NAME=${2:-$DEFAULT_NAME}
 
 cd ~/repos/Grunt-Scaffold
-git archive --format zip --output $DIR/$NAME.zip master
-cd $1
-unzip $NAME.zip -d $NAME
-rm $NAME.zip
-cd $NAME && touch weareinside.txt
+git archive --format zip --output $DESTINATION/$PROJECT_NAME.zip master
+cd $DESTINATION
+unzip $PROJECT_NAME.zip -d $PROJECT_NAME
+rm $PROJECT_NAME.zip
+cd $PROJECT_NAME && touch weareinside.txt
